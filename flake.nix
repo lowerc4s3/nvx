@@ -16,7 +16,6 @@
   outputs = inputs @ {
     nixpkgs,
     flake-parts,
-    nvf,
     import-tree,
     ...
   }:
