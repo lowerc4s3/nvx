@@ -4,10 +4,6 @@
     vim.globals = let
       inherit (lib) map nameValuePair listToAttrs;
       disabledPlugins = [
-        "netrw"
-        "netrwPlugin"
-        "netrwSettings"
-        "netrwFileHandlers"
         "gzip"
         "zip"
         "zipPlugin"
