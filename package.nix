@@ -22,6 +22,7 @@
   flake.modules.nvf.init = {
     imports = with self.modules.nvf; [
       core
+      editor
     ];
   };
 }
