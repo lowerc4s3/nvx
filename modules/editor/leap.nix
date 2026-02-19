@@ -15,7 +15,7 @@
   in {
     vim.startPlugins = ["vim-repeat"];
     vim.luaConfigRC.leap-nvim =
-      entryBefore ["mappings"]
+      entryBefore ["lazyConfigs"]
       remoteTextObject.definition;
     vim.lazy.plugins.leap-nvim = {
       package = "leap-nvim";
