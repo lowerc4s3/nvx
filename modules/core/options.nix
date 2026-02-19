@@ -1,38 +1,37 @@
 {
   flake.modules.nvf.options = {
-    vim.options = let
-      spaces = 4;
-    in {
-      expandtab = true;
-      smarttab = true;
-      shiftwidth = spaces;
-      tabstop = spaces;
-      autoindent = true;
+    vim = {
+      clipboard = {
+        enable = true;
+        registers = "unnamedplus";
+      };
+      lineNumberMode = "relNumber";
+      searchCase = "smart";
+      spellcheck = {
+        enable = true;
+        languages = ["en" "ru"];
+      };
+      options = {
+        expandtab = true;
+        autoindent = true;
+        shiftwidth = 4;
+        wrap = false;
+        foldlevel = 999; # disable autofolding
 
-      clipboard = "unnamedplus"; # TODO: check for system clipboard availability
-      ignorecase = true;
-      smartcase = true;
-      wrap = false;
-      timeoutlen = 500;
-
-      showmode = false;
-      foldmethod = "expr";
-      foldlevel = 999; # disable autofolding
-      fillchars = "eob: ";
-      termguicolors = true;
-      number = true;
-      relativenumber = true;
-      cursorline = true;
-      signcolumn = "yes"; # always show signcolumn (e.g. lsp warnings)
-      ruler = false;
-      laststatus = 3; # global statusline
-      title = true;
-      showcmd = false;
-    };
-
-    vim.globals = {
-      mapleader = " ";
-      maplocalleader = " ";
+        cursorlineopt = "both";
+        signcolumn = "yes";
+        fillchars = "eob: ";
+        showmode = false;
+        ruler = false;
+        splitright = true;
+        splitbelow = true;
+        termguicolors = true;
+        title = true;
+      };
+      globals = {
+        mapleader = " ";
+        maplocalleader = " ";
+      };
     };
   };
 }
