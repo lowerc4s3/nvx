@@ -3,5 +3,6 @@
     options
     keymaps
     autocmds
+    optimization
   ];
 }
