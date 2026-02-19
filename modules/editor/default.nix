@@ -4,6 +4,7 @@
       leap
       langinput
       surround
+      autopairs
     ];
   };
 }
