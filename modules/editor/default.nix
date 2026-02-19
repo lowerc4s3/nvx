@@ -3,6 +3,7 @@
     imports = with self.modules.nvf; [
       leap
       langinput
+      surround
     ];
   };
 }
