@@ -1,7 +1,10 @@
 {
   flake.modules.nvf.autopairs = {
-    vim.mini.pairs = {
-      enable = true;
+    vim.lazy.plugins.mini-pairs = {
+      package = "mini-pairs";
+      event = "InsertEnter";
+      setupModule = "mini.pairs";
+      setupOpts = {};
     };
   };
 }
