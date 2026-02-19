@@ -12,6 +12,7 @@
       require('leap.remote').action { input = ${prefix} .. ch }
     '');
   in {
+    vim.startPlugins = ["vim-repeat"];
     vim.extraPlugins.leap-nvim = {
       package = "leap-nvim";
       setup = remoteTextObject.definition;
