@@ -23,6 +23,7 @@
     imports = with self.modules.nvf; [
       core
       editor
+      coding
     ];
   };
 }
