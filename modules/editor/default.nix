@@ -5,6 +5,8 @@
       langinput
       surround
       autopairs
+      treesitter
+      ts-textobjects
     ];
   };
 }
