@@ -24,6 +24,7 @@
       core
       editor
       coding
+      nix
     ];
   };
 }
