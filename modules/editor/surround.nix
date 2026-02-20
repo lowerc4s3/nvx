@@ -14,6 +14,7 @@
         visual_line = "gS";
         delete = "gsd";
         change = "gsr";
+        change_line = "gSR";
       };
     };
   };
