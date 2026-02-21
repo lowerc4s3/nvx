@@ -1,10 +1,6 @@
 {
-  flake.modules.nvf.autocmds = {
-    lib,
-    nvxlib,
-    ...
-  }: let
-    inherit (nvxlib) mkAutocmd;
+  flake.modules.nvf.autocmds = {lib, ...}: let
+    inherit (lib.nvx) mkAutocmd;
   in {
     vim.autocmds = [
       (mkAutocmd "FileType" {

@@ -1,11 +1,7 @@
 {
-  flake.modules.nvf.leap = {
-    lib,
-    nvxlib,
-    ...
-  }: let
+  flake.modules.nvf.leap = {lib, ...}: let
     inherit (lib.nvim.binds) mkKeymap;
-    inherit (nvxlib.lua) mkFunc mkLambda;
+    inherit (lib.nvx.lua) mkFunc mkLambda;
     inherit (lib.nvim.dag) entryBefore;
     remoteTextObject = mkFunc "remoteTextObject" ({prefix}: ''
       local ok, ch = pcall(vim.fn.getcharstr) -- pcall for handling <C-c>

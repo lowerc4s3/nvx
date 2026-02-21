@@ -1,6 +1,7 @@
 {
   inputs,
   self,
+  lib,
   ...
 }: {
   perSystem = {
@@ -11,7 +12,12 @@
     packages.nvx =
       (inputs.nvf.lib.neovimConfiguration {
         inherit pkgs;
-        extraSpecialArgs = {nvxlib = self.lib;};
+        extraSpecialArgs = {
+          lib = lib.extend (final: prev: {
+            inherit (inputs.nvf.lib) nvim;
+            nvx = self.lib;
+          });
+        };
         modules = with self.modules.nvf; [
           init
         ];

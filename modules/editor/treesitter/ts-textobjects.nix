@@ -1,13 +1,12 @@
 {
   flake.modules.nvf.ts-textobjects = {
     lib,
-    nvxlib,
     pkgs,
     ...
   }: let
     inherit (lib.nvim.binds) mkKeymap;
     inherit (lib) mapAttrsToList;
-    inherit (nvxlib.lua) mkLambda;
+    inherit (lib.nvx.lua) mkLambda;
   in {
     vim.treesitter.enable = true;
     vim.lazy.plugins.nvim-treesitter-textobjects = {

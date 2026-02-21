@@ -2,11 +2,10 @@
   flake.modules.nvf.lsp = {
     options,
     lib,
-    nvxlib,
     ...
   }: let
     inherit (lib.nvim.dag) entryAfter;
-    inherit (nvxlib.lua) createAutocmd mkLambda;
+    inherit (lib.nvx.lua) createAutocmd mkLambda;
   in {
     vim.lsp = {
       enable = true;
