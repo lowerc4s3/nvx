@@ -6,5 +6,6 @@
     autopairs
     treesitter
     ts-textobjects
+    tabout
   ];
 }
