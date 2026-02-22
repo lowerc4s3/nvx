@@ -30,6 +30,7 @@
       core
       editor
       coding
+      ui
       nix
     ];
   };
