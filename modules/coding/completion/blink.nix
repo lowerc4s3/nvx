@@ -11,12 +11,51 @@
   in {
     vim.autocomplete.blink-cmp = {
       enable = true;
-      mappings = {
-        scrollDocsUp = "<C-b>";
-        scrollDocsDown = "<C-f>";
-      };
+
+      # reset default keymaps
+      mappings =
+        options.vim.autocomplete.blink-cmp.mappings
+        |> builtins.mapAttrs (_: _: null);
+
       setupOpts = {
         sources.default = ["snippets" "lsp" "path" "buffer"];
+
+        keymap = {
+          preset = "none";
+
+          "<C-b>" = ["scroll_documentation_up" "fallback"];
+          "<C-f>" = ["scroll_documentation_down" "fallback"];
+          "<C-e>" = ["cancel" "fallback"];
+          "<CR>" = ["select_and_accept" "fallback"];
+
+          "<Tab>" = [
+            (mkLuaInline ''
+              function(cmp)
+                if cmp.is_visible() then
+                  return cmp.select_next()
+                elseif cmp.snippet_active() then
+                  return cmp.accept()
+                end
+                return false
+              end
+            '')
+            "snippet_forward"
+            "fallback"
+          ];
+          "<S-Tab>" = [
+            (mkLuaInline ''
+              function(cmp)
+                if cmp.is_visible() then
+                  return cmp.select_prev()
+                elseif cmp.snippet_active() then
+                  return cmp.snippet_backward()
+                end
+                return false
+              end
+            '')
+            "fallback"
+          ];
+        };
 
         appearance.nerd_font_variant = "normal";
         signature.enabled = true;
