@@ -15,6 +15,7 @@
         expandtab = true;
         autoindent = true;
         shiftwidth = 4;
+        tabstop = 4;
         wrap = false;
         foldlevel = 999; # disable autofolding
 
