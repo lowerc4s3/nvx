@@ -7,5 +7,6 @@
     treesitter
     ts-textobjects
     tabout
+    indent-lines
   ];
 }
