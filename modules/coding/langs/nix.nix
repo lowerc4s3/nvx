@@ -1,5 +1,9 @@
 {
-  flake.modules.nvf.nix = {lib, ...}: let
+  flake.modules.nvf.nix = {
+    lib,
+    pkgs,
+    ...
+  }: let
     inherit (lib.nvx) mkAutocmd;
     inherit (lib.generators) mkLuaInline;
   in {
@@ -11,9 +15,12 @@
       };
       lsp = {
         enable = true;
-        servers = ["nil"];
+        servers = ["nixd"];
       };
-      treesitter.enable = true;
+      treesitter = {
+        enable = true;
+        package = pkgs.vimPlugins.nvim-treesitter-parsers.nix;
+      };
     };
     vim.autocmds = [
       (mkAutocmd "FileType" {
