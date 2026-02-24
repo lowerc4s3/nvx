@@ -60,13 +60,14 @@
       # (mkKeymap "n" "<leader>fp" "<cmd>Telescope projects<cr>" {desc = "Search projects";})
     ];
     vim.highlight = {
-      TelescopeNormal.link = "FloatBorder";
-      TelescopePromptNormal.link = "CursorLine";
-      TelescopePromptBorder.link = "CursorLine";
-      TelescopePreview.link = "FloatBorder";
-      TelescopePreviewBorder.link = "FloatBorder";
-      TelescopeResults.link = "FloatBorder";
-      TelescopeResultsBorder.link = "FloatBorder";
+      TelescopeNormal.link = "Pmenu";
+      TelescopePromptNormal.link = "PmenuSel";
+      TelescopePromptBorder.link = "PmenuSel";
+      TelescopePromptPrefix.link = "PmenuSel";
+      TelescopePreview.link = "Pmenu";
+      TelescopePreviewBorder.link = "Pmenu";
+      TelescopeResults.link = "Pmenu";
+      TelescopeResultsBorder.link = "Pmenu";
     };
   };
 }
