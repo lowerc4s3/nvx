@@ -23,6 +23,8 @@
           format = "grf";
           hover = "K";
         };
+
+      lspconfig.enable = true;
     };
 
     # setup symbol references highlight

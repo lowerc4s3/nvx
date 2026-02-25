@@ -22,6 +22,7 @@
         package = pkgs.vimPlugins.nvim-treesitter-parsers.nix;
       };
     };
+
     vim.autocmds = [
       (mkAutocmd "FileType" {
         pattern = ["nix"];
