@@ -9,6 +9,7 @@
     imports = with self.modules.nvf; [
       icons
       telescope
+      colorizer
     ];
   };
 }
