@@ -4,5 +4,6 @@
     keymaps
     autocmds
     optimization
+    neovide
   ];
 }
