@@ -12,7 +12,7 @@
   in {
     vim.luaConfigRC.neovide = entryBefore ["lazyConfigs"] ''
       if vim.g.neovide then
-        vim.opt.linespace = 5
+        vim.opt.linespace = 6
 
         vim.g.neovide_padding_top = 10
         vim.g.neovide_padding_bottom = 10
