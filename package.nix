@@ -32,6 +32,7 @@
       coding
       ui
       nix
+      nushell
     ];
   };
 }
