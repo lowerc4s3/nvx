@@ -32,11 +32,11 @@
                         icons (require :mini.icons)
                         label-text #(col-menu.blink_components_text $)
                         label-hl #(col-menu.blink_components_highlight $)
-                        kind-icon #(.. " " (icons.get :lsp $.kind) $.icon_gap)]
+                        icon-text #(.. " " (icons.get :lsp $.kind) $.icon_gap)]
                     {:columns [(| :kind_icon) (| :label {:gap 1})]
                      :padding 0
                      :components {:label {:text label-text :highlight label-hl}
-                                  :kind_icon {:text kind-icon}}})
+                                  :kind_icon {:text icon-text}}})
         completion {:documentation {:auto_show true}
                     :ghost_text {:enabled false}
                     :list {:selection {:preselect false :auto_insert true}}
